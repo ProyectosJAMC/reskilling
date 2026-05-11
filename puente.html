@@ -8,7 +8,6 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --azul:      #1A3A8A;
       --azul-dark: #0D2260;
@@ -20,9 +19,7 @@
       --texto:     #111827;
       --blanco:    #FFFFFF;
     }
-
     html { height: 100%; }
-
     body {
       min-height: 100%;
       font-family: 'DM Sans', sans-serif;
@@ -33,8 +30,6 @@
       justify-content: center;
       padding: 2rem 1rem;
     }
-
-    /* ── Tarjeta principal ── */
     .card {
       background: var(--blanco);
       border: 1px solid var(--borde);
@@ -45,63 +40,59 @@
       text-align: center;
       box-shadow: 0 4px 24px rgba(26,58,138,.07);
     }
-
-    /* ── Logos ── */
-    .logos {
+    .nombres {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 1.25rem;
+      gap: 1rem;
       margin-bottom: 2rem;
     }
-    .logo-block {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2px;
-    }
-    .logo-incaf {
+    .nombre-incaf {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.7rem;
+      font-size: 1.1rem;
       color: var(--azul);
-      letter-spacing: -.5px;
-      line-height: 1;
+      line-height: 1.2;
     }
-    .logo-incaf span { color: #E8601A; }
-    .logo-sub {
+    .nombre-incaf small {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
       font-size: 9px;
       font-weight: 500;
       color: var(--gris);
       text-transform: uppercase;
-      letter-spacing: .6px;
+      letter-spacing: .5px;
+      margin-top: 2px;
     }
-    .divider-logos {
+    .divider-nombres {
       width: 1px;
       height: 36px;
       background: var(--borde);
+      flex-shrink: 0;
     }
-    .logo-erak {
+    .nombre-erak {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.5rem;
+      font-size: 1.1rem;
       color: var(--rojo);
-      letter-spacing: -.3px;
-      line-height: 1;
+      line-height: 1.2;
     }
-
-    /* ── Ícono de éxito ── */
+    .nombre-erak small {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 9px;
+      font-weight: 500;
+      color: var(--gris);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      margin-top: 2px;
+    }
     .icono-ok {
-      width: 64px;
-      height: 64px;
+      width: 64px; height: 64px;
       background: #DCFCE7;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       margin: 0 auto 1.25rem;
     }
     .icono-ok svg { width: 32px; height: 32px; }
-
-    /* ── Tipografía ── */
     h1 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.5rem;
@@ -116,96 +107,47 @@
       margin-bottom: 1.75rem;
     }
     .subtitulo strong { color: var(--texto); }
-
-    /* ── Separador ── */
-    .sep {
-      border: none;
-      border-top: 1px solid var(--borde);
-      margin: 1.5rem 0;
-    }
-
-    /* ── Pregunta de confirmación ── */
-    .pregunta {
-      font-size: .95rem;
-      font-weight: 600;
-      color: var(--texto);
-      margin-bottom: 1.25rem;
-    }
-
-    /* ── Botones ── */
+    .sep { border: none; border-top: 1px solid var(--borde); margin: 1.5rem 0; }
+    .pregunta { font-size: .95rem; font-weight: 600; color: var(--texto); margin-bottom: 1.25rem; }
     .btn-si {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: .5rem;
-      width: 100%;
-      padding: .9rem 1.5rem;
-      background: var(--azul);
-      color: var(--blanco);
-      border: none;
-      border-radius: 10px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
+      display: flex; align-items: center; justify-content: center; gap: .5rem;
+      width: 100%; padding: .9rem 1.5rem;
+      background: var(--azul); color: var(--blanco);
+      border: none; border-radius: 10px;
+      font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600;
+      cursor: pointer; text-decoration: none;
       transition: background .15s, transform .1s;
       margin-bottom: .75rem;
     }
     .btn-si:hover { background: var(--azul-dark); transform: translateY(-1px); }
     .btn-si:active { transform: translateY(0); }
     .btn-si svg { width: 18px; height: 18px; flex-shrink: 0; }
-
     .btn-no {
-      display: block;
-      width: 100%;
-      padding: .75rem 1.5rem;
-      background: transparent;
-      color: var(--gris);
-      border: 1px solid var(--borde);
-      border-radius: 10px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: .9rem;
-      cursor: pointer;
-      transition: background .15s, color .15s;
+      display: block; width: 100%; padding: .75rem 1.5rem;
+      background: transparent; color: var(--gris);
+      border: 1px solid var(--borde); border-radius: 10px;
+      font-family: 'DM Sans', sans-serif; font-size: .9rem;
+      cursor: pointer; transition: background .15s, color .15s;
     }
     .btn-no:hover { background: var(--gris-pale); color: var(--texto); }
-
-    /* ── Duración ── */
     .duracion {
-      display: inline-flex;
-      align-items: center;
-      gap: .4rem;
-      font-size: .8rem;
-      color: var(--gris);
-      background: var(--azul-pale);
-      border-radius: 999px;
-      padding: .3rem .9rem;
-      margin-bottom: 1.5rem;
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-size: .8rem; color: var(--gris);
+      background: var(--azul-pale); border-radius: 999px;
+      padding: .3rem .9rem; margin-bottom: 1.5rem;
     }
     .duracion svg { width: 14px; height: 14px; color: var(--azul); }
-
-    /* ── Pantalla de gracias ── */
     #pantalla-gracias { display: none; }
     .icono-gracias {
-      width: 64px; height: 64px;
-      background: var(--azul-pale);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
+      width: 64px; height: 64px; background: var(--azul-pale);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
       margin: 0 auto 1.25rem;
     }
     .icono-gracias svg { width: 32px; height: 32px; }
-
-    /* ── Footer ── */
     .footer {
-      margin-top: 1.5rem;
-      font-size: .78rem;
-      color: #9CA3AF;
-      text-align: center;
-      line-height: 1.6;
+      margin-top: 1.5rem; font-size: .78rem; color: #9CA3AF;
+      text-align: center; line-height: 1.6;
     }
-
-    /* ── Transición suave entre pantallas ── */
     .pantalla { animation: fadeIn .35s ease; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
   </style>
@@ -214,23 +156,20 @@
 
   <div class="card">
 
-    <!-- Logos -->
-    <div class="logos">
-      <div class="logo-block">
-        <div class="logo-incaf">IN<span>✓</span>AF</div>
-        <div class="logo-sub">Instituto Nacional de<br>Capacitación y Formación</div>
+    <div class="nombres">
+      <div class="nombre-incaf">
+        INCAF
+        <small>Instituto Nacional de<br>Capacitación y Formación</small>
       </div>
-      <div class="divider-logos"></div>
-      <div class="logo-block">
-        <div class="logo-erak">ERAK</div>
-        <div class="logo-sub">Consultores<br>Social Research</div>
+      <div class="divider-nombres"></div>
+      <div class="nombre-erak">
+        ERAK Consultores
+        <small>Social Research</small>
       </div>
     </div>
 
-    <!-- ════ PANTALLA INICIAL ════ -->
     <div id="pantalla-inicial" class="pantalla">
 
-      <!-- Ícono de éxito -->
       <div class="icono-ok">
         <svg viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2.5"
              stroke-linecap="round" stroke-linejoin="round">
@@ -259,8 +198,7 @@
         Duración aproximada: 15 a 20 minutos
       </div>
 
-      <!-- Botón SÍ — apunta directamente al formulario 2 -->
-      <a class="btn-si" href="https://ee.kobotoolbox.org/x/aLFlRzVX" id="btn-continuar">
+      <a class="btn-si" href="https://ee.kobotoolbox.org/x/aLFlRzVX">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
              stroke-linecap="round" stroke-linejoin="round">
           <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -268,14 +206,12 @@
         Sí, continuar con la encuesta completa
       </a>
 
-      <!-- Botón NO -->
       <button class="btn-no" onclick="mostrarGracias()">
         No, finalizar aquí
       </button>
 
-    </div><!-- /pantalla-inicial -->
+    </div>
 
-    <!-- ════ PANTALLA DE GRACIAS (para quienes dicen No) ════ -->
     <div id="pantalla-gracias" class="pantalla">
 
       <div class="icono-gracias">
@@ -296,9 +232,9 @@
         Le agradecemos sinceramente el tiempo brindado a este estudio del <strong>INCAF</strong>.
       </p>
 
-    </div><!-- /pantalla-gracias -->
+    </div>
 
-  </div><!-- /card -->
+  </div>
 
   <div class="footer">
     INCAF — Instituto Nacional de Capacitación y Formación &nbsp;|&nbsp;
